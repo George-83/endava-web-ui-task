@@ -6,7 +6,7 @@ import type {Locator, Page} from '@playwright/test';
 export class CartPage {
     readonly page: Page;
     readonly checkOutButton: Locator;
-    readonly productInCart: Locator;
+    readonly productsInCart: Locator;
     readonly openMenuButton : Locator;
     readonly logoutButton : Locator;
 
@@ -14,7 +14,7 @@ export class CartPage {
     constructor(page: Page) {
         this.page = page;
         this.checkOutButton = page.locator('[data-test="checkout"]');
-        this.productInCart = page.locator('[data-test="inventory-item"]');
+        this.productsInCart = page.locator('[data-test="inventory-item"]');
         this.openMenuButton = page.locator('#react-burger-menu-btn');
         this.logoutButton = page.locator('[data-test="logout-sidebar-link"]');
     }

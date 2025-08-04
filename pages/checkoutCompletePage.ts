@@ -9,7 +9,7 @@ export class CheckoutCompletePage {
     readonly successImage: Locator;
     readonly completeHeader: Locator;
     readonly completeText: Locator;
-    readonly cartButton : Locator;
+    readonly cartIconButton : Locator;
     readonly cartBadge : Locator;
 
 
@@ -19,7 +19,7 @@ export class CheckoutCompletePage {
         this.successImage = page.locator('[data-test="pony-express"]');
         this.completeHeader = page.locator('[data-test="complete-header"]');
         this.completeText = page.locator('[data-test="complete-text"]');
-        this.cartButton = page.locator('[data-test="shopping-cart-link"]');
+        this.cartIconButton = page.locator('[data-test="shopping-cart-link"]');
         this.cartBadge = page.locator('[data-test="shopping-cart-badge"]');
     }
 }

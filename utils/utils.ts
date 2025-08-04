@@ -3,8 +3,9 @@
  */
 import { Page } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
+import { CartPage } from "../pages/cartPage";
 
-// This function is a URL constructor
+// This function returns baseURL. It is used in tests to build the page URL
 export function getUrl(path: string) {
     return `${path}`;
 }
@@ -40,4 +41,21 @@ export async function getCredentials(page: Page): Promise<{ username: string, pa
     }
 
     return { username, password };
+}
+
+
+// This function is a login action
+export async function login(page: Page): Promise<void> {
+    const homePage = new HomePage(page);
+    const { username, password } = await getCredentials(page);
+    await homePage.usernameInput.fill(username);
+    await homePage.passwordInput.fill(password);
+    await homePage.submitLoginButton.click();
+}
+
+// This function is a logout action
+export async function logout(page: Page): Promise<void> {
+    const cartPage = new CartPage(page);
+    await cartPage.openMenuButton.click();
+    await cartPage.logoutButton.click();
 }

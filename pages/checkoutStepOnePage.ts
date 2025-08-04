@@ -1,5 +1,5 @@
 /**
- * This file contains locators and navigations for "Checkout Step One" page
+ * This file contains locators for "Checkout Step One" page
  */
 import type {Locator, Page} from '@playwright/test';
 

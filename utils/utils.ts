@@ -11,26 +11,29 @@ export function getUrl(path: string) {
 }
 
 
-// This function gets the first "username" and "password" from Home page
+// This function gets the first "username" from the list of users and the "password"
 export async function getCredentials(page: Page): Promise<{ username: string, password: string }> {
     const homePage = new HomePage(page);
 
     // Get all text from "usernames" and from "password" blocks
-    const usernames = await homePage.usernamesContainer.textContent();
-    const passwords = await homePage.passwordsContainer.textContent();
+    const usernamesText = await homePage.usernamesContainer.innerHTML();
+    const passwordsText = await homePage.passwordsContainer.textContent();
 
     // Check if could not extract credentials
-    if (!usernames || !passwords) {
+    if (!usernamesText || !passwordsText) {
         throw new Error('Could not extract credentials from Home page');
     }
 
-    // Remove headers and spaces
-    const usernamesRaw = usernames.replace('Accepted usernames are:', '').trim();
-    const passwordsRaw = passwords.replace('Password for all users:', '').trim();
+    // Remove headers, tags and spaces, make a list of users
+    const usernamesList = usernamesText
+        .replace('Accepted usernames are:', '')
+        .split('<br>')
+        .map(line => line.replace(/<[^>]*>/g, '').trim())
+        .filter(Boolean);
+    const passwordsRaw = passwordsText.replace('Password for all users:', '').trim();
 
     // Get first username
-    const usernameMatch = usernamesRaw.match(/standard_user/);
-    const username = usernameMatch ? usernameMatch[0] : null;
+    const username = usernamesList[0];
 
     // Get password
     const password = passwordsRaw;
@@ -52,6 +55,7 @@ export async function login(page: Page): Promise<void> {
     await homePage.passwordInput.fill(password);
     await homePage.submitLoginButton.click();
 }
+
 
 // This function is a logout action
 export async function logout(page: Page): Promise<void> {

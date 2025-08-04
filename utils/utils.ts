@@ -6,7 +6,7 @@ import { HomePage } from "../pages/homePage";
 
 // This function is a URL constructor
 export function getUrl(path: string) {
-    return `/${path}`;
+    return `${path}`;
 }
 
 

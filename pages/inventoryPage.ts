@@ -1,5 +1,5 @@
 /**
- * This file contains locators and navigations for Inventory page
+ * This file contains locators and navigations for "Inventory" page
  */
 import type {Locator, Page} from '@playwright/test';
 

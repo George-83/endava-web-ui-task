@@ -1,7 +1,7 @@
 /**
  * This file contains locators for "Cart" page
  */
-import type {Locator, Page} from '@playwright/test';
+import type { Locator, Page } from '@playwright/test';
 
 export class CartPage {
     readonly page: Page;

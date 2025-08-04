@@ -4,7 +4,7 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/homePage";
 import { InventoryPage } from "../../pages/inventoryPage";
-import {getUrl, login, logout} from "../../utils/utils";
+import { getUrl, login, logout } from "../../utils/utils";
 
 test("Scenario 2", async ({page}) => {
     const homePage = new HomePage(page);

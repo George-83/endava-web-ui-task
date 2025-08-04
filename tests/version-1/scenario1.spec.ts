@@ -6,7 +6,7 @@ import { HomePage } from "../../pages/homePage";
 import { InventoryPage } from "../../pages/inventoryPage";
 import { CartPage } from "../../pages/cartPage";
 import { CheckoutStepOnePage } from "../../pages/checkoutStepOnePage";
-import { CheckoutStepTwoPage} from "../../pages/checkoutStepTwoPage";
+import { CheckoutStepTwoPage } from "../../pages/checkoutStepTwoPage";
 import { CheckoutCompletePage } from "../../pages/checkoutCompletePage";
 import { getUrl, getCredentials } from "../../utils/utils";
 

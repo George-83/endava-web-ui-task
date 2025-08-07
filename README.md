@@ -15,6 +15,10 @@ This project provides automated tests for the public web site [https://www.sauce
 │   ├── homePage.ts
 │   └── inventoryPage.ts
 │
+├── 📁 reporters/                  # Contains custom reports
+│   ├── custom-html.ts
+│   └── custom-list.ts
+│
 ├── 📁 tests/                      # Test modules organized by scenarios
 │   └── 📁 version-1/
 │       ├── scenario1.spec.ts
@@ -34,7 +38,7 @@ This project provides automated tests for the public web site [https://www.sauce
 
 
 ## 🚀 How to Run Tests
-```npx playwright test```
+* ```npx playwright test```
 
 ## 🚀 How to Run Specific Tests
 If tests are grouped by tags "smoke", "regression":
@@ -43,11 +47,10 @@ If tests are grouped by tags "smoke", "regression":
 * ```npx playwright test -g "smoke|regression"```
 
 ## 🌐 Environments
-The project supports running tests on multiple environments such as dev, test, stage, and others
-<br>Environments are defined in playwright.config.ts
-<br>By default, tests are running on 'test' environment
-<br>To run tests on specific environment, put the environment name into the command:
-<br>
+The project supports running tests on multiple environments such as dev, test, stage, production and others
+* Environments are defined in playwright.config.ts
+* By default, tests are running on 'test' environment
+* To run tests on specific environment, put the environment name into the command:
 ```$env:TEST_ENV="test"; npx playwright test```
 
 ## ✅ Features Covered

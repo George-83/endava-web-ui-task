@@ -10,7 +10,8 @@ import { CheckoutStepTwoPage } from "../../pages/checkoutStepTwoPage";
 import { CheckoutCompletePage } from "../../pages/checkoutCompletePage";
 import { getCredentials } from "../../utils/utils";
 
-test("Scenario 1", async ({page}) => {
+
+test('@regression Scenario 1', async ({page}) => {
     const homePage = new HomePage(page);
     const inventoryPage = new InventoryPage(page);
     const cartPage = new CartPage(page);

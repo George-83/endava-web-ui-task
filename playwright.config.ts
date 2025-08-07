@@ -11,6 +11,16 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+const ENV = process.env.TEST_ENV || 'test'; // by default "test"
+
+const baseURL: Record<string, string> = {
+  dev: 'https://dev.saucedemo.com',
+  test: 'https://www.saucedemo.com',
+  stage: 'https://stage.saucedemo.com',
+  production: 'https://production.saucedemo.com',
+};
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -33,11 +43,11 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-     baseURL: 'https://www.saucedemo.com',
+     baseURL: baseURL[ENV],
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */
@@ -47,15 +57,15 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
+    //
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {

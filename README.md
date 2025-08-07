@@ -42,6 +42,14 @@ If tests are grouped by tags "smoke", "regression":
 * ```npx playwright test -g "regression"```
 * ```npx playwright test -g "smoke|regression"```
 
+## 🌐 Environments
+The project supports running tests on multiple environments such as dev, test, stage, and others
+<br>Environments are defined in playwright.config.ts
+<br>By default, tests are running on 'test' environment
+<br>To run tests on specific environment, put the environment name into the command:
+<br>
+```$env:TEST_ENV="test"; npx playwright test```
+
 ## ✅ Features Covered
 1. Scenario 1:
     * Log in with the standard user

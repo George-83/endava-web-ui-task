@@ -4,14 +4,14 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/homePage";
 import { InventoryPage } from "../../pages/inventoryPage";
-import { getUrl, login, logout } from "../../utils/utils";
+import { login, logout } from "../../utils/utils";
 
 test("Scenario 2", async ({page}) => {
     const homePage = new HomePage(page);
     const inventoryPage = new InventoryPage(page);
     await homePage.open();
     await login(page);
-    await expect(page).toHaveURL(getUrl('inventory.html'));
+    await expect(page).toHaveURL('inventory.html');
     await inventoryPage.sortDropdown.selectOption('Price (high to low)');
     await expect(inventoryPage.textOnSortDropdown).toHaveText('Price (high to low)');
 
@@ -28,6 +28,6 @@ test("Scenario 2", async ({page}) => {
     expect(actualPrices).toEqual(expectedPrices);
 
     await logout(page);
-    await expect(page).toHaveURL(getUrl('/'));
+    await expect(page).toHaveURL('/');
     await expect(homePage.submitLoginButton).toBeVisible();
 });

@@ -5,12 +5,6 @@ import { Page } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 import { CartPage } from "../pages/cartPage";
 
-// This function returns baseURL. It is used in tests to build the page URL
-export function getUrl(path: string) {
-    return `${path}`;
-}
-
-
 // This function gets the first "username" from the list of users and the "password"
 export async function getCredentials(page: Page): Promise<{ username: string, password: string }> {
     const homePage = new HomePage(page);

@@ -75,7 +75,7 @@ The project supports running tests on multiple environments such as dev, test, s
 * "headless" mode is configured to "true"
 * Project is designed to be scalable and extendable
 
-## 📊 How activate custom reports
+## 📊 How to activate custom reports
 Uncomment the report you want to use in the file playwright.config.ts:
 * line
 * list

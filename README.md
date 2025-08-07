@@ -36,6 +36,11 @@ This project provides automated tests for the public web site [https://www.sauce
 ## 🚀 How to Run Tests
 ```npx playwright test```
 
+## 🚀 How to Run Specific Tests
+If tests are grouped by tags "smoke", "regression":
+* ```npx playwright test -g "smoke"```<br>
+* ```npx playwright test -g "regression"```
+
 ## ✅ Features Covered
 1. Scenario 1:
     * Log in with the standard user

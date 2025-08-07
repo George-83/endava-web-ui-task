@@ -38,8 +38,9 @@ This project provides automated tests for the public web site [https://www.sauce
 
 ## 🚀 How to Run Specific Tests
 If tests are grouped by tags "smoke", "regression":
-* ```npx playwright test -g "smoke"```<br>
+* ```npx playwright test -g "smoke"```
 * ```npx playwright test -g "regression"```
+* ```npx playwright test -g "smoke|regression"```
 
 ## ✅ Features Covered
 1. Scenario 1:
@@ -62,6 +63,15 @@ If tests are grouped by tags "smoke", "regression":
 * Tests are configured to be run on "chromium", "firefox" and "webkit" browsers
 * "headless" mode is configured to "true"
 * Project is designed to be scalable and extendable
+
+## 📊 How activate custom reports
+Uncomment the report you want to use in the file playwright.config.ts:
+* line
+* list
+* html
+* custom-list
+* custom-html
+* json
 
 ## 👤 Author - Georgi Bordukov, Senior Software QA Engineer
 * LinkedIn profile - https://www.linkedin.com/in/george-bordukov/

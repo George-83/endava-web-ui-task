@@ -50,7 +50,7 @@ If tests are grouped by tags "smoke", "regression":
 The project supports running tests on multiple environments such as dev, test, stage, production and others
 * Environments are defined in playwright.config.ts
 * By default, tests are running on 'test' environment
-* To run tests on specific environment, put the environment name into the command:<br>
+* To run tests on specific environment, put the environment name into the command (dev, test, stage etc.):<br>
 ```$env:TEST_ENV="test"; npx playwright test```
 
 ## ✅ Features Covered

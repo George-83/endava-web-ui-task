@@ -4,7 +4,7 @@
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/homePage";
 import { InventoryPage } from "../../pages/inventoryPage";
-import { login, logout } from "../../utils/utils";
+import {getUrl, login, logout} from "../../utils/utils";
 
 
 test('Scenario 2', { tag: '@smoke' }, async ({page}) => {
@@ -12,7 +12,7 @@ test('Scenario 2', { tag: '@smoke' }, async ({page}) => {
     const inventoryPage = new InventoryPage(page);
     await homePage.open();
     await login(page);
-    await expect(page).toHaveURL('inventory.html');
+    await expect(page).toHaveURL(getUrl('Inventory'));
     await inventoryPage.sortDropdown.selectOption('Price (high to low)');
     await expect(inventoryPage.textOnSortDropdown).toHaveText('Price (high to low)');
 

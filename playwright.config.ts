@@ -12,9 +12,9 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 
-const ENV = process.env.TEST_ENV || 'test'; // by default "test"
+export const ENV = process.env.TEST_ENV || 'test'; // by default "test"
 
-const baseURL: Record<string, string> = {
+export const baseURL: Record<string, string> = {
   dev: 'https://dev.saucedemo.com',
   test: 'https://www.saucedemo.com',
   stage: 'https://stage.saucedemo.com',

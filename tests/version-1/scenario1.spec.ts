@@ -9,6 +9,7 @@ import { CheckoutStepOnePage } from "../../pages/checkoutStepOnePage";
 import { CheckoutStepTwoPage } from "../../pages/checkoutStepTwoPage";
 import { CheckoutCompletePage } from "../../pages/checkoutCompletePage";
 import { getCredentials } from "../../utils/utils";
+import { getUrl } from "../../utils/utils";
 
 
 test('Scenario 1', { tag: '@regression' }, async ({page}) => {
@@ -23,7 +24,7 @@ test('Scenario 1', { tag: '@regression' }, async ({page}) => {
     await homePage.usernameInput.fill(username);
     await homePage.passwordInput.fill(password);
     await homePage.submitLoginButton.click();
-    await expect(page).toHaveURL('inventory.html');
+    await expect(page).toHaveURL(getUrl('Inventory'));
     await inventoryPage.firstAddToCartButton.click();
     await inventoryPage.lastAddToCartButton.click();
     await expect(inventoryPage.firstAddToCartButton).toHaveText('Remove');
@@ -33,23 +34,23 @@ test('Scenario 1', { tag: '@regression' }, async ({page}) => {
     await expect(inventoryPage.firstAddToCartButton).toHaveText('Add to cart');
     await expect(inventoryPage.previousToTheLastButton).toHaveText('Remove');
     await inventoryPage.cartIconButton.click();
-    await expect(page).toHaveURL('cart.html');
+    await expect(page).toHaveURL(getUrl('Cart'));
     await cartPage.checkOutButton.click();
-    await  expect(page).toHaveURL('checkout-step-one.html');
+    await  expect(page).toHaveURL(getUrl('CheckoutStepOne'));
     await checkoutStepOnePage.firstNameInput.fill('Ivan');
     await checkoutStepOnePage.lastNameInput.fill('Ivanov');
     await checkoutStepOnePage.postalCodeInput.fill('5000');
     await checkoutStepOnePage.submitCartButton.click();
-    await expect(page).toHaveURL('checkout-step-two.html');
+    await expect(page).toHaveURL(getUrl('CheckoutStepTwo'));
     await checkoutStepTwoPage.finishOrderButton.click();
-    await expect(page).toHaveURL('checkout-complete.html');
+    await expect(page).toHaveURL(getUrl('CheckoutComplete'));
     await expect(checkoutCompletePage.checkoutCompleteMessage).toHaveText('Checkout: Complete!');
     await expect(checkoutCompletePage.successImage).toBeVisible();
     await expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');
     await expect(checkoutCompletePage.completeText).toContainText('order has been dispatched');
     await expect(checkoutCompletePage.cartBadge).not.toBeVisible();
     await checkoutCompletePage.cartIconButton.click();
-    await expect(page).toHaveURL('cart.html');
+    await expect(page).toHaveURL(getUrl('Cart'));
     await expect(cartPage.productsInCart).toHaveCount(0);
     await cartPage.openMenuButton.click();
     await cartPage.logoutButton.click();

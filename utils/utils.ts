@@ -4,6 +4,28 @@
 import { Page } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 import { CartPage } from "../pages/cartPage";
+import { ENV, baseURL } from '../playwright.config';
+
+
+// Page paths
+export const PagePaths = {
+    Inventory: 'inventory.html',
+    Cart: 'cart.html',
+    CheckoutStepOne: 'checkout-step-one.html',
+    CheckoutStepTwo: 'checkout-step-two.html',
+    CheckoutComplete: 'checkout-complete.html',
+} as const;
+
+// Key type
+export type PageKey = keyof typeof PagePaths;
+
+
+// This function is a URL generator. It is used in tests to build the page URL
+export function getUrl(page: PageKey) {
+    const base = baseURL[ENV];
+    const path = PagePaths[page];
+    return `${base.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
+}
 
 // This function gets the first "username" from the list of users and the "password"
 export async function getCredentials(page: Page): Promise<{ username: string, password: string }> {

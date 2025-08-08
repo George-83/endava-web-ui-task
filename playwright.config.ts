@@ -31,20 +31,23 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
+  /* Maximum time expect() should wait for the condition to be met.*/
+  expect: {
+    timeout: 5000
+  },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
       ['line'],
-      //['list', { printSteps: true }],
-      //['html', { open: 'never', title: 'Custom Report' }],
+      //['list', { printSteps: true } ],
+      //['html', { open: 'never', title: 'HTML Report with trace' } ],
       //['./reporters/custom-list.ts'],
       //['./reporters/custom-html.ts'],
-      //['json', { printSteps: true }],
+      //['json', { printSteps: true } ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
      baseURL: baseURL[ENV],
-
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
     headless: true,
@@ -54,7 +57,10 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        //viewport:{ width: 1024, height: 1366 }
+        },
     },
 
     {

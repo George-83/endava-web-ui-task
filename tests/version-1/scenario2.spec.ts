@@ -7,7 +7,7 @@ import { InventoryPage } from "../../pages/inventoryPage";
 import { login, logout } from "../../utils/utils";
 
 
-test('@smoke Scenario 2', async ({page}) => {
+test('Scenario 2', { tag: '@smoke' }, async ({page}) => {
     const homePage = new HomePage(page);
     const inventoryPage = new InventoryPage(page);
     await homePage.open();

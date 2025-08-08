@@ -37,9 +37,9 @@ export default defineConfig({
   },
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-      ['line'],
-      //['list', { printSteps: true } ],
-      //['html', { open: 'never', title: 'HTML Report with trace' } ],
+      //['line'],
+      ['list', { printSteps: true } ],
+      //['html', { open: 'never', title: 'HTML Report' } ],
       //['./reporters/custom-list.ts'],
       //['./reporters/custom-html.ts'],
       //['json', { printSteps: true } ],

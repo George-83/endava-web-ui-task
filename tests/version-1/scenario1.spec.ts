@@ -11,7 +11,7 @@ import { CheckoutCompletePage } from "../../pages/checkoutCompletePage";
 import { getCredentials } from "../../utils/utils";
 
 
-test('@regression Scenario 1', async ({page}) => {
+test('Scenario 1', { tag: '@regression' }, async ({page}) => {
     const homePage = new HomePage(page);
     const inventoryPage = new InventoryPage(page);
     const cartPage = new CartPage(page);

@@ -14,6 +14,7 @@ export class InventoryPage {
     readonly sortDropdown : Locator;
     readonly allProductPrices : Locator;
     readonly textOnSortDropdown : Locator;
+    readonly pageTitle : Locator;
 
 
     constructor(page: Page) {
@@ -27,5 +28,6 @@ export class InventoryPage {
         this.sortDropdown = page.locator('[data-test="product-sort-container"]');
         this.allProductPrices = page.locator('[data-test="inventory-item-price"]');
         this.textOnSortDropdown = page.locator('[data-test="active-option"]');
+        this.pageTitle = page.locator('[data-test="title"]');
     }
 }

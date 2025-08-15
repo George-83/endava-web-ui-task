@@ -43,7 +43,7 @@ test('Scenario 1', { tag: '@regression' }, async ({ page, pages }) => {
 
     // Go to checkout
     await cartPage.checkOutButton.click();
-    await  expect(page).toHaveURL(getUrl('CheckoutStepOne'));
+    await expect(page).toHaveURL(getUrl('CheckoutStepOne'));
     await checkoutStepOnePage.firstNameInput.fill('Ivan');
     await checkoutStepOnePage.lastNameInput.fill('Ivanov');
     await checkoutStepOnePage.postalCodeInput.fill('5000');
@@ -59,9 +59,9 @@ test('Scenario 1', { tag: '@regression' }, async ({ page, pages }) => {
     await expect(checkoutCompletePage.successImage).toBeVisible();
     await expect(checkoutCompletePage.completeHeader).toHaveText('Thank you for your order!');
     await expect(checkoutCompletePage.completeText).toContainText('order has been dispatched');
-    await expect(checkoutCompletePage.cartBadge).not.toBeVisible();
 
     // Verify cart is empty
+    await expect(checkoutCompletePage.cartBadge).not.toBeVisible();
     await checkoutCompletePage.cartIconButton.click();
     await expect(page).toHaveURL(getUrl('Cart'));
     await expect(cartPage.productsInCart).toHaveCount(0);

@@ -1,6 +1,7 @@
 /**
  * This file contains UI tests for Scenario 2
  */
+
 import { test, expect } from "@playwright/test";
 import { HomePage } from "../../pages/homePage";
 import { InventoryPage } from "../../pages/inventoryPage";

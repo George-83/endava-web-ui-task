@@ -1,6 +1,7 @@
 /**
  * This file contains locators for "Checkout Step One" page
  */
+
 import type { Locator, Page } from '@playwright/test';
 
 export class CheckoutStepOnePage {

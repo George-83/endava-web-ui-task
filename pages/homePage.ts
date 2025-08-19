@@ -1,6 +1,7 @@
 /**
  * This file contains locators and navigations for "Home" page
  */
+
 import type { Locator, Page } from '@playwright/test';
 
 export class HomePage {

@@ -1,6 +1,7 @@
 /**
  * This file contains UI tests for Scenario 1
  */
+
 import { expect } from "@playwright/test";
 import { test } from "../../utils/fixtures";
 import { getUrl, login, logout } from "../../utils/utils";
@@ -15,7 +16,7 @@ test('Scenario 1', { tag: '@regression' }, async ({ page, pages }) => {
     await expect(page).toHaveURL(getUrl('Inventory'));
     await expect(inventoryPage.pageTitle).toHaveText('Products');
 
-    // Add the first and the last item in the cart
+    // Add the first and the last item to the cart
     await inventoryPage.firstAddToCartButton.click();
     await inventoryPage.lastAddToCartButton.click();
     await expect(inventoryPage.firstAddToCartButton).toHaveText('Remove');

@@ -1,6 +1,7 @@
 /**
  * This file contains fixtures used across the tests
  */
+
 import { test as base } from '@playwright/test';
 import { HomePage } from "../pages/homePage";
 import { InventoryPage } from "../pages/inventoryPage";

@@ -1,6 +1,7 @@
 /**
  * This file contains general-purpose utility functions
  */
+
 import { Page } from "@playwright/test";
 import { HomePage } from "../pages/homePage";
 import { CartPage } from "../pages/cartPage";

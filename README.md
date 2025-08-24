@@ -1,4 +1,4 @@
-# WEB UI №1 Test Project
+# WEB UI Test Project №1
 
 This project provides automated tests for the public web site [https://www.saucedemo.com/](https://www.saucedemo.com/), built using **TypeScript** and the **Playwright** framework.
 

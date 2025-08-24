@@ -3,8 +3,8 @@
  */
 
 import { Page } from "@playwright/test";
-import { HomePage } from "../pages/homePage";
-import { CartPage } from "../pages/cartPage";
+import { HomePage } from "../pages/home-page";
+import { CartPage } from "../pages/cart-page";
 import { ENV, baseURL } from '../playwright.config';
 
 

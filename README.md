@@ -1,4 +1,4 @@
-# Endava WEB UI Testing Project
+# WEB UI №1 Test Project
 
 This project provides automated tests for the public web site [https://www.saucedemo.com/](https://www.saucedemo.com/), built using **TypeScript** and the **Playwright** framework.
 
@@ -8,23 +8,23 @@ This project provides automated tests for the public web site [https://www.sauce
 📁 project-root/
 │
 ├── 📁 pages/                      # Page Object Model (POM). Contains locators and navigations for pages
-│   ├── cartPage.ts
-│   ├── checkoutCompletePage.ts
-│   ├── checkoutStepOnePage.ts
-│   ├── checkoutStepTwoPage.ts
-│   ├── homePage.ts
-│   └── inventoryPage.ts
+│   ├── cart-page.ts
+│   ├── checkout-complete-page.ts
+│   ├── checkout-step-one-page.ts
+│   ├── checkout-step-two-page.ts
+│   ├── home-page.ts
+│   └── inventory-page.ts
 │
 ├── 📁 reporters/                  # Contains custom reports
 │   ├── custom-html.ts
 │   └── custom-list.ts
 │
 ├── 📁 tests/                      # Test modules organized by scenarios
-│   └── 📁 version-1/
-│       ├── scenario1.spec.ts
-│       └── scenario2.spec.ts
+│   ├── scenario-1.spec.ts
+│   └── scenario-2.spec.ts
 │
-├── 📁 utils/                      # General-purpose utility functions
+├── 📁 utils/                      # General-purpose utility functions and fixtures
+│   ├── fixtures.ts
 │   └── utils.ts
 │
 ├── playwright.config.ts           # Playwright configurations
@@ -86,4 +86,4 @@ Uncomment the report you want to use in the file playwright.config.ts:
 
 ## 👤 Author - Georgi Bordukov, Senior Software QA Engineer
 * LinkedIn profile - https://www.linkedin.com/in/george-bordukov/
-* Created as part of the testing task for Endava, using TypeScript, and Playwright
+* This project was developed as part of a technical assessment for a QA position, using TypeScript, and Playwright

@@ -3,12 +3,12 @@
  */
 
 import { test as base } from '@playwright/test';
-import { HomePage } from "../pages/homePage";
-import { InventoryPage } from "../pages/inventoryPage";
-import { CartPage } from "../pages/cartPage";
-import { CheckoutStepOnePage } from "../pages/checkoutStepOnePage";
-import { CheckoutStepTwoPage } from "../pages/checkoutStepTwoPage";
-import { CheckoutCompletePage } from "../pages/checkoutCompletePage";
+import { HomePage } from "../pages/home-page";
+import { InventoryPage } from "../pages/inventory-page";
+import { CartPage } from "../pages/cart-page";
+import { CheckoutStepOnePage } from "../pages/checkout-step-one-page";
+import { CheckoutStepTwoPage } from "../pages/checkout-step-two-page";
+import { CheckoutCompletePage } from "../pages/checkout-complete-page";
 
 
 // Fixture for Scenario 1

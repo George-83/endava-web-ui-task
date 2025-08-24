@@ -3,9 +3,9 @@
  */
 
 import { test, expect } from "@playwright/test";
-import { HomePage } from "../../pages/homePage";
-import { InventoryPage } from "../../pages/inventoryPage";
-import {getUrl, login, logout} from "../../utils/utils";
+import { HomePage } from "../pages/home-page";
+import { InventoryPage } from "../pages/inventory-page";
+import {getUrl, login, logout} from "../utils/utils";
 
 
 test('Scenario 2', { tag: '@smoke' }, async ({page}) => {

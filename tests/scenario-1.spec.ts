@@ -3,8 +3,8 @@
  */
 
 import { expect } from "@playwright/test";
-import { test } from "../../utils/fixtures";
-import { getUrl, login, logout } from "../../utils/utils";
+import { test } from "../utils/fixtures";
+import { getUrl, login, logout } from "../utils/utils";
 
 
 test('Scenario 1', { tag: '@regression' }, async ({ page, pages }) => {
